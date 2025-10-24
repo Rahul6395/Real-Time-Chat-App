@@ -6,7 +6,7 @@ import { apiClient } from "@/utils/api-client";
 import { GET_DM_CONTACTS_ROUTES } from "@/utils/constants";
 import { userAppStore } from "@/store";
 import ContactList from "@/components/contact-list";
-import CreateChannel from "./components/create-channel";
+
 
 const Logo = () => {
   return (
@@ -76,12 +76,7 @@ console.log("directMessagesContact",directMessagesContact)
           <ContactList contacts={directMessagesContact}/>
         </div>
       </div>
-        <div className='my-5'>
-        <div className='flex items-center justify-between pr-10'>
-           <Title text={'Channels'}/>
-           <CreateChannel/>
-        </div>
-      </div>
+      
       <ProfileInfo/>
     </div>
   )
