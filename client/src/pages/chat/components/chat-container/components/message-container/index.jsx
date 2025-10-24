@@ -106,12 +106,12 @@ const checkIfImage = (filePath)=>{
     <div className={`${message.sender === selectedChatData._id ? "text-left" : "text-right"}`}>
       {
         message.messageType === "text" && (
-          <div className={`${message.sender !== selectedChatData._id ? "bg-[#8417ff]/5 text-[#8417ff]/90 border-[#8417ff]/50" : "bg-[#2a2b33]/5 text-white/80 border-[#fff]/20"} border inline-block md:p-4 sm:p-2 p-1 round my-1 max-w-[90%] w-fit break-words rounded`}>
+          <div className={`${message.sender !== selectedChatData._id ? "bg-[#8417ff]/5 text-[#8417ff]/90 border-[#8417ff]/50" : "bg-[#2a2b33]/5 text-white/80 "}  inline-block md:p-4 sm:p-2 p-1 round my-1 max-w-[90%] w-fit break-words rounded`}>
             {message.content}
           </div>
         )}
         {
-          message.messageType === "file" &&   <div className={`${message.sender !== selectedChatData._id ? "bg-[#8417ff]/5 text-[#8417ff]/90 border-[#8417ff]/50" : "bg-[#2a2b33]/5 text-white/80 border-[#fff]/20"} border inline-block md:p-4 sm:p-2 p-1 round my-1  max-w-[90%] w-fit break-words rounded`}>
+          message.messageType === "file" &&   <div className={`${message.sender !== selectedChatData._id ? "bg-[#8417ff]/5 text-[#8417ff]/90 border-[#8417ff]/50" : "bg-[#2a2b33]/5 text-white/80 "}  inline-block md:p-4 sm:p-2 p-1 round my-1  max-w-[90%] w-fit break-words rounded`}>
             {
               checkIfImage(message.fileUrl)? 
               <div className="cursor-pointer" onClick={()=>{setShowImg(true);setImgUrl(message.fileUrl)}}>
@@ -126,7 +126,7 @@ const checkIfImage = (filePath)=>{
             }
           </div>
         }
-      <div className="text-xs text-gray-600">
+      <div className="text-[10px] text-gray-600 mb-1">
         {moment(message.timestamp).format("LT")}
       </div>
     </div>

@@ -28,10 +28,15 @@ const messageSchema = new mongoose.Schema({
             return this.messageType === "file";
         },
     },
-    timestamps:{
-        type:Date,
-        default:Date.now,
-    },
+    // timestamps:{
+    //     type:Date,
+    //     default:Date.now,
+    // },
+      createdAt: {  // rename timestamps -> createdAt
+    type: Date,
+    default: Date.now,
+    index: { expires: '1d' } // auto-delete 24 hours after creation
+  }
 });
 
 
